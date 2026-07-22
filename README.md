@@ -2,15 +2,15 @@
 
 **[Read the live interactive explainer →](https://jvanderberg.github.io/affordable-explainer/)**
 
-A scroll-driven visual story about how Oak Park, Illinois, creates affordable housing and why building more homes is part of protecting affordability.
+A scroll-driven visual story about how Oak Park, Illinois, creates affordable housing and why building more housing is part of protecting affordability.
 
 The explainer follows three connected ideas:
 
 - New housing begins expensive, then becomes ordinary housing as it ages.
-- New construction helps immediately by making room for successive household moves, eventually opening older, lower-cost homes.
+- New construction helps immediately by making room for successive household moves, eventually opening older, lower-cost apartments.
 - Targeted subsidy and market-rate supply do different jobs: subsidy protects people the market cannot reach, while supply expands housing choices at scale.
 
-Interactive chapters visualize Oak Park's construction slowdown in the 1980s and 1990s, the household moves created by one new apartment, and the local record: 1,751 new multifamily homes alongside a net increase of 1,350 homes counted as affordable.
+Interactive chapters visualize Oak Park's construction slowdown in the 1980s and 1990s, the household moves created by one new apartment, and the local record: 1,751 new multifamily units alongside a net increase of 1,350 units counted as affordable.
 
 ## Data and research
 
@@ -21,7 +21,7 @@ The analysis draws on:
 - Village of Oak Park, *Strategic Vision for Housing*
 - Published research on new housing, household moves, nearby rents, and filtering
 
-Method notes and direct source links appear throughout the explainer. Census year-built figures describe the housing stock still standing and do not count demolished homes.
+Method notes and direct source links appear throughout the explainer. Census year-built figures describe the housing stock still standing and do not count units lost to demolition.
 
 ## Development
 
