@@ -1,6 +1,6 @@
 # Oak Park Housing Affordability Explainer
 
-**[Read the live interactive explainer →](https://jvanderberg.github.io/affordable-explainer/)**
+**[Read the live interactive explainer →](https://affordability.yesoakpark.org/)**
 
 A scroll-driven visual story about how Oak Park, Illinois, creates affordable housing and why building more housing is part of protecting affordability.
 
