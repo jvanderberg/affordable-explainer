@@ -48,7 +48,7 @@ const cohortSteps: StoryStep[] = [
   { kicker: "Start with new housing", title: "New construction begins expensive.", body: "Land, labor and financing put a newly finished apartment near the top of the market." },
   { kicker: "Then let time work", title: "Decades later, those apartments serve the middle market.", body: "The ordinary housing of today was once the new construction of the 1950s, 60s and 70s." },
   { kicker: "Then Oak Park stopped building", title: "Building plunged in the 1980s and 90s.", body: "Oak Park added far less housing in those decades. Those units would be reaching middle age and middle-market prices now." },
-  { kicker: "The result arrives today", title: "We are missing two decades of older housing.", body: "When newer choices are scarce, higher-income households compete for older apartments. The filtering engine can run backward." },
+  { kicker: "The result arrives today", title: "We are missing two decades of older housing.", body: "When newer choices are scarce, higher-income households compete for older apartments." },
 ];
 
 const cohortData = [
