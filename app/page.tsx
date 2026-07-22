@@ -48,7 +48,7 @@ const cohortSteps: StoryStep[] = [
   { kicker: "Start with new housing", title: "New construction begins expensive.", body: "Land, labor and financing put a newly finished apartment near the top of the market." },
   { kicker: "Then let time work", title: "Decades later, those apartments serve the middle market.", body: "The ordinary housing of today was once the new construction of the 1950s, 60s and 70s." },
   { kicker: "Then Oak Park stopped building", title: "Building plunged in the 1980s and 90s.", body: "Oak Park added far less housing in those decades. Those units would be reaching middle age and middle-market prices now." },
-  { kicker: "The result arrives today", title: "We are missing two decades of older housing.", body: "When newer choices are scarce, higher-income households compete for older apartments." },
+  { kicker: "The result arrives today", title: "We are missing decades of older housing.", body: "That’s thousands of units of what would now be affordable housing." },
 ];
 
 const cohortData = [
@@ -59,13 +59,15 @@ const cohortData = [
 
 function CohortGraphic({ active }: { active: number }) {
   const max = 2118;
+  const earlierAverage = 1670;
+  const laterAverage = 842;
   return (
     <div className={`cohort-graphic scene-${active}`} aria-live="polite">
       <div className="scene-heading">
         <span>OAK PARK HOUSING STILL STANDING</span>
-        <strong>{active < 2 ? "Housing ages into affordability" : "Construction fell"}</strong>
+        <strong>{active < 2 ? "Housing ages into affordability" : active === 2 ? "Construction fell" : "Four decades below the old pace"}</strong>
       </div>
-      <div className="cohort-bars" role="img" aria-label="Animated chart of Oak Park housing by decade, emphasizing the construction decline in the 1980s and 1990s.">
+      <div className="cohort-bars" role="img" aria-label="Chart of Oak Park housing still standing by decade, comparing an average of 1,670 units per decade from the 1940s through the 1970s with 842 units per decade from the 1980s through the 2010s.">
         {cohortData.map((item, index) => (
           <div className={`cohort ${index === 4 || index === 5 ? "missing" : ""}`} key={item.era}>
             <div className="unit-label">{item.units.toLocaleString()}</div>
@@ -75,9 +77,12 @@ function CohortGraphic({ active }: { active: number }) {
             <span>{item.era}</span>
           </div>
         ))}
+        <div className="average-band" style={{ "--high": `${(earlierAverage / max) * 100}%`, "--low": `${(laterAverage / max) * 100}%` } as React.CSSProperties} aria-hidden="true" />
+        <div className="average-line earlier-average" style={{ "--level": `${(earlierAverage / max) * 100}%` } as React.CSSProperties}><span>1940s–70s average · 1,670</span></div>
+        <div className="average-line later-average" style={{ "--level": `${(laterAverage / max) * 100}%` } as React.CSSProperties}><span>1980s–2010s average · 842</span></div>
+        <div className="average-shortfall"><strong>3,313</strong><span>fewer units than the earlier average pace</span></div>
       </div>
       <div className="gap-callout"><b>1980–99</b><strong>1,271</strong><span>housing units still standing</span></div>
-      <div className="demand-swarm" aria-hidden="true">{Array.from({ length: 12 }).map((_, i) => <i style={{ "--n": i } as React.CSSProperties} key={i} />)}</div>
       <p className="scene-note">ACS 2024 five-year estimate · year built of current stock</p>
     </div>
   );
@@ -199,7 +204,9 @@ export default function Home() {
 
       <CohortStory />
 
-      <section className="bridge"><span>THE LONG GAME</span><h2>The expensive building of today becomes the ordinary building of tomorrow.</h2><p>New construction also helps immediately. One new apartment lets one household move without competing for an existing apartment. The apartment it leaves behind lets the next household move.</p></section>
+      <section className="bridge"><div><span>THE LONG GAME</span><h2>The expensive building of today becomes the ordinary building of tomorrow.</h2></div></section>
+
+      <section className="filtering-intro"><span>AFFORDABILITY NOW</span><h2>But we don’t have to wait for buildings to age into affordability.</h2><p>New construction provides affordable housing now.</p></section>
 
       <ChainStory />
 
