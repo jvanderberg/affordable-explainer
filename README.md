@@ -2,7 +2,7 @@
 
 **[Read the live interactive explainer →](https://jvanderberg.github.io/affordable-explainer/)**
 
-A scroll-driven visual story about how Oak Park, Illinois, creates affordable housing—and why building more homes is part of protecting affordability.
+A scroll-driven visual story about how Oak Park, Illinois, creates affordable housing and why building more homes is part of protecting affordability.
 
 The explainer follows three connected ideas:
 
