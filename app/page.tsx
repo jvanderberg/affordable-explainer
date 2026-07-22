@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-type StoryStep = { kicker: string; title: string; body: string };
+type StoryStep = { kicker: string; title: string; body: string; link?: { href: string; label: string } };
 
 function useScrollSteps(count: number) {
   const [active, setActive] = useState(0);
@@ -38,6 +38,7 @@ function StoryText({ steps, active, refs }: { steps: StoryStep[]; active: number
           <span>{step.kicker}</span>
           <h2>{step.title}</h2>
           <p>{step.body}</p>
+          {step.link && <a className="step-link" href={step.link.href} target="_blank" rel="noreferrer">{step.link.label} ↗</a>}
         </section>
       ))}
     </div>
@@ -103,7 +104,7 @@ const chainSteps: StoryStep[] = [
   { kicker: "Before construction", title: "Every apartment is occupied.", body: "Three households live in three existing buildings. Nobody can move without competing for an available apartment." },
   { kicker: "One new apartment opens", title: "Household A moves into the new building.", body: "A gets the newest apartment, and the one A leaves behind is now empty." },
   { kicker: "That vacancy is useful", title: "Household B moves into A’s former apartment.", body: "B gets a newer place, and B’s old apartment becomes the available one." },
-  { kicker: "One more move", title: "Household C moves. An older apartment opens.", body: "The new building never had to be cheap itself. By setting off three moves, it eased competition farther down the market." },
+  { kicker: "One more move", title: "Household C moves. An older apartment opens.", body: "The new building never had to be cheap itself. By setting off three moves, it eased competition farther down the market. Economist Evan Mast traced these chains of moves and found that for every 100 new market-rate units, roughly 70 open up in below-median-income neighborhoods within about five years.", link: { href: "https://www.sciencedirect.com/science/article/abs/pii/S0094119021000656", label: "Read the study" } },
 ];
 
 function VacancyGraphic({ active }: { active: number }) {
@@ -147,7 +148,6 @@ function VacancyGraphic({ active }: { active: number }) {
         <div><span>HOUSEHOLDS THAT MOVED</span><strong>{active}</strong></div>
         <div className={active === 3 ? "complete" : ""}><span>OLDER APARTMENTS OPENED</span><strong>{active === 3 ? "1" : "0"}</strong></div>
       </div>
-      {active === 3 && <p className="cascade-footnote">In Mast’s study, 100 new market-rate units reduced demand by roughly 70 units in below-median-income neighborhoods within about five years.</p>}
     </div>
   );
 }
@@ -225,7 +225,7 @@ export default function Home() {
 
       <section className="iho"><div><span>INCLUSIONARY HOUSING</span><h2>A requirement can’t create an affordable unit in a building that never gets built.</h2></div><div><p>Inclusionary rules can produce reduced-rent units. But if the requirement makes new construction infeasible, it shuts off the very supply those units come from.</p><p>San Francisco’s 2026 feasibility analysis found nearly every tested housing type infeasible even at a 0% requirement. The city then moved to cut its on-site requirement from 15% to 5% while seeking broader affordable-housing funding.</p><div className="source-links"><a href="https://media.api.sf.gov/documents/Triennial_Economic_Feasibilty_Report_2026.final.pdf" target="_blank" rel="noreferrer">SF Controller report ↗</a><a href="https://www.sfchronicle.com/realestate/article/affordable-housing-requirements-22194354.php" target="_blank" rel="noreferrer">Chronicle reporting ↗</a></div></div></section>
 
-      <section className="finale"><div><span>THE LESSON</span><h2>Start the engine again.</h2><p>New market-rate construction protects existing affordable housing and generates new affordable housing as it ages. It’s the engine that creates a diverse and affordable housing stock. We’ve shut down that engine for too long. It’s time to start it up again.</p></div></section>
+      <section className="finale"><div><span>THE LESSON</span><h2>Start the engine again.</h2><p>New market-rate construction protects the affordable housing we have today and, as it ages, becomes the affordable housing of tomorrow. It’s the engine of a diverse and healthy housing stock. We’ve shut down that engine for far too long. It’s time to start it up again.</p></div></section>
 
       <footer><p><strong>Method:</strong> ACS 2024 five-year table B25034; Village of Oak Park Strategic Vision for Housing; IHDA AHPAA affordability lists. Year-built data describe current stock and do not count units lost to demolition.</p><div><a href="https://api.censusreporter.org/1.0/data/show/latest?geo_ids=16000US1754885&table_ids=B25034" target="_blank" rel="noreferrer">ACS data</a><a href="#top">Back to top ↑</a></div></footer>
     </main>
