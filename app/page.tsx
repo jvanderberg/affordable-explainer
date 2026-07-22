@@ -101,7 +101,7 @@ function CohortStory() {
 
 const chainSteps: StoryStep[] = [
   { kicker: "Before construction", title: "Every apartment is occupied.", body: "Three households live in three existing buildings. Nobody can move without competing for an available apartment." },
-  { kicker: "One new apartment opens", title: "Household A moves into the new building.", body: "A doesn’t displace anyone, and the apartment A leaves behind is now empty." },
+  { kicker: "One new apartment opens", title: "Household A moves into the new building.", body: "A gets the newest apartment, and the one A leaves behind is now empty." },
   { kicker: "That vacancy is useful", title: "Household B moves into A’s former apartment.", body: "B gets a newer place, and B’s old apartment becomes the available one." },
   { kicker: "One more move", title: "Household C moves. An older apartment opens.", body: "The new building never had to be cheap itself. By setting off three moves, it eased competition farther down the market." },
 ];
@@ -163,9 +163,9 @@ function ChainStory() {
 }
 
 const proofSteps: StoryStep[] = [
-  { kicker: "Since 2012", title: "Oak Park built 1,751 multifamily units.", body: "Nearly all of them opened at market rate." },
-  { kicker: "Directly restricted", title: "Only 50 of those new units were deed-restricted affordable.", body: "Those units matter, but they’re a small slice of everything that went up." },
-  { kicker: "Meanwhile", title: "IHDA counted 1,350 more affordable units.", body: "The count rose from 3,991 in 2013 to 5,341 in 2023. Fifty restricted units can’t account for a change that size." },
+  { kicker: "What we built", title: "Since 2012, Oak Park has built 1,751 multifamily units.", body: "Nearly all of them opened at market rate." },
+  { kicker: "What was subsidized", title: "Only 50 of those new units were deed-restricted affordable.", body: "Those units matter, but they’re a small slice of everything that went up." },
+  { kicker: "What changed", title: "Meanwhile, IHDA counted 1,350 more affordable units.", body: "The count rose from 3,991 in 2013 to 5,341 in 2023. Fifty restricted units can’t account for a change that size." },
 ];
 
 function ProofGraphic({ active }: { active: number }) {
