@@ -25,7 +25,7 @@ test("server-renders the housing explainer", async () => {
   assert.match(html, /Build more housing/);
   assert.doesNotMatch(html, /THE POLICY CHOICE|A DUAL APPROACH|27× faster/);
   assert.doesNotMatch(html, /HOUSING IS A CHAIN/);
-  assert.match(html, /Start building again/);
+  assert.match(html, /Start the engine again/);
   assert.doesNotMatch(html, /pre.?1940|1938|59%/i);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/);
 });

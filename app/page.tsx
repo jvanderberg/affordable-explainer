@@ -46,9 +46,9 @@ function StoryText({ steps, active, refs }: { steps: StoryStep[]; active: number
 
 const cohortSteps: StoryStep[] = [
   { kicker: "Start with new housing", title: "New construction begins expensive.", body: "Land, labor and financing put a newly finished apartment near the top of the market." },
-  { kicker: "As buildings age", title: "Decades later, those apartments serve the middle market.", body: "Many ordinary apartments today were new construction in the 1950s, 60s and 70s." },
-  { kicker: "Construction slowed", title: "Building plunged in the 1980s and 90s.", body: "Oak Park added far less housing in those decades. Those units would be reaching middle age and middle-market prices now." },
-  { kicker: "Why that matters now", title: "We are missing two decades of older housing.", body: "When newer choices are scarce, higher-income households compete for older apartments. Those apartments can become more expensive instead." },
+  { kicker: "Then let time work", title: "Decades later, those apartments serve the middle market.", body: "The ordinary housing of today was once the new construction of the 1950s, 60s and 70s." },
+  { kicker: "Then Oak Park stopped building", title: "Building plunged in the 1980s and 90s.", body: "Oak Park added far less housing in those decades. Those units would be reaching middle age and middle-market prices now." },
+  { kicker: "The result arrives today", title: "We are missing two decades of older housing.", body: "When newer choices are scarce, higher-income households compete for older apartments. The filtering engine can run backward." },
 ];
 
 const cohortData = [
@@ -97,7 +97,7 @@ const chainSteps: StoryStep[] = [
   { kicker: "Before construction", title: "Every apartment is occupied.", body: "Three households live in three existing buildings. Nobody can move without competing for an available apartment." },
   { kicker: "One new apartment opens", title: "Household A moves into the new building.", body: "A is not displacing anyone. The apartment A leaves behind is now vacant." },
   { kicker: "That vacancy is useful", title: "Household B moves into A’s former apartment.", body: "B gets a newer apartment. B’s former apartment now becomes the available one." },
-  { kicker: "One more move", title: "Household C moves. An older apartment opens.", body: "Three moves eventually open an older apartment and reduce competition farther down the market." },
+  { kicker: "One more move", title: "Household C moves. An older apartment opens.", body: "The new building never had to be inexpensive itself. By making room for three moves, it reduced competition farther down the market." },
 ];
 
 function VacancyGraphic({ active }: { active: number }) {
@@ -158,7 +158,7 @@ function ChainStory() {
 
 const proofSteps: StoryStep[] = [
   { kicker: "Since 2012", title: "Oak Park built 1,751 multifamily units.", body: "The overwhelming majority entered at market rate." },
-  { kicker: "Directly restricted", title: "Only 50 of those new units were deed-restricted affordable.", body: "Those 50 units mattered. They were still a small fraction of total construction." },
+  { kicker: "Directly restricted", title: "Only 50 of those new units were deed-restricted affordable.", body: "Direct affordability mattered. It was a small fraction of total construction." },
   { kicker: "Meanwhile", title: "IHDA counted 1,350 more affordable units.", body: "The count rose from 3,991 in 2013 to 5,341 in 2023. The scale cannot be explained by 50 restricted units alone." },
 ];
 
@@ -192,33 +192,33 @@ export default function Home() {
       <header className="masthead"><a href="#top" className="brand">OAK PARK, EXPLAINED</a><span>HOUSING · JULY 2026</span></header>
       <section className="hero" id="top">
         <div className="hero-sky" aria-hidden="true"><div className="sun" /><div className="hero-buildings">{Array.from({ length: 10 }).map((_, i) => <div className={`hero-building b${i}`} key={i}>{Array.from({ length: 6 }).map((__, j) => <i key={j} />)}</div>)}</div></div>
-        <div className="hero-copy"><p className="eyebrow">How affordability is made</p><h1>Today’s “luxury” housing is tomorrow’s affordable housing.</h1><p className="dek">Oak Park’s history shows how housing becomes affordable and why the construction slowdown matters today.</p><p className="byline">By Josh VanderBerg <span>•</span> Data from the U.S. Census Bureau, IHDA and the Village of Oak Park</p><a className="scroll-cue" href="#pipeline">SCROLL TO BEGIN <b>↓</b></a></div>
+        <div className="hero-copy"><p className="eyebrow">How affordability is made</p><h1>Today’s “luxury” housing is tomorrow’s affordable housing.</h1><p className="dek">Oak Park’s own history shows how housing becomes affordable and why stopping construction broke the cycle.</p><p className="byline">By Josh VanderBerg <span>•</span> Data from the U.S. Census Bureau, IHDA and the Village of Oak Park</p><a className="scroll-cue" href="#pipeline">SCROLL TO BEGIN <b>↓</b></a></div>
       </section>
 
       <section className="opening" id="pipeline"><div className="intro-card"><p>Much of Oak Park’s affordable housing began as ordinary market-rate housing. Private developers built it decades ago, and it remained part of the community’s housing stock.</p><p>Over time, newer housing attracted higher rents. Older buildings moved down the market and became an important source of lower-cost housing.</p></div></section>
 
       <CohortStory />
 
-      <section className="bridge"><span>OVER TIME</span><h2>The expensive building of today becomes the ordinary building of tomorrow.</h2><p>New construction also helps immediately. One new apartment lets one household move without competing for an existing apartment. The apartment it leaves behind lets the next household move.</p></section>
+      <section className="bridge"><span>THE LONG GAME</span><h2>The expensive building of today becomes the ordinary building of tomorrow.</h2><p>New construction also helps immediately. One new apartment lets one household move without competing for an existing apartment. The apartment it leaves behind lets the next household move.</p></section>
 
       <ChainStory />
 
       <section className="research-band"><div className="research-stat">5–7%</div><div><span>NEARBY RENT EFFECT</span><h2>Rents fell near new buildings.</h2><p>Across 11 cities, rents within roughly 800 feet of new market-rate apartments fell 5–7% relative to comparable buildings a little farther away.</p><div className="source-links"><a href="https://direct.mit.edu/rest/article/105/2/359/100977" target="_blank" rel="noreferrer">Asquith, Mast & Reed ↗</a><a href="https://www.sciencedirect.com/science/article/abs/pii/S0094119021000656" target="_blank" rel="noreferrer">Mast household-moves study ↗</a></div></div></section>
 
-      <section className="local-record-intro"><span>THE LOCAL RECORD</span><h2>This works<br />here, too.</h2><p>Here is what happened in Oak Park from 2012 to 2023.</p></section>
+      <section className="local-record-intro"><span>THE LOCAL RECORD</span><h2>This works<br />here, too.</h2><p>Oak Park’s own numbers show the same pattern.</p></section>
 
       <ProofStory />
 
-      <section className="qualification"><p>The comparison cannot establish that new construction caused every additional affordable unit. It does establish that the affordable stock changed at a scale the 50 restricted units cannot explain on their own.</p><div className="source-links"><a href="https://www.ihda.org/about-ihda/ahpaa" target="_blank" rel="noreferrer">IHDA affordability lists ↗</a><a href="https://www.oak-park.us/files/assets/public/v/1/development-customer-services/planning-division/documents/strategic-vision-for-housing_final_3.26.24_reduced.pdf" target="_blank" rel="noreferrer">Village housing strategy ↗</a></div></section>
+      <section className="qualification"><p>That comparison does not prove every added affordable unit was caused by new construction. It shows that affordable supply changed at a scale direct construction alone cannot explain.</p><div className="source-links"><a href="https://www.ihda.org/about-ihda/ahpaa" target="_blank" rel="noreferrer">IHDA affordability lists ↗</a><a href="https://www.oak-park.us/files/assets/public/v/1/development-customer-services/planning-division/documents/strategic-vision-for-housing_final_3.26.24_reduced.pdf" target="_blank" rel="noreferrer">Village housing strategy ↗</a></div></section>
 
       <section className="policy">
         <div className="policy-intro"><span>TWO COMPLEMENTARY TOOLS</span><h2>Build more housing.<br />Subsidize housing for people who still cannot afford it.</h2></div>
-        <div className="policy-cards"><article><b>TARGETED SUBSIDY</b><h3>Help households with the greatest need.</h3><p>Subsidy serves households that cannot afford market rents. Recent Chicago city-supported projects cost roughly $679,000–$747,000 per unit, which limits how many a local budget can produce.</p></article><div className="policy-plus" aria-hidden="true"><span>+</span></div><article><b>MARKET-RATE CONSTRUCTION</b><h3>Increase the overall supply.</h3><p>New construction creates choices now, makes room for successive moves and produces the older housing future Oak Park residents will rely on.</p></article></div>
+        <div className="policy-cards"><article><b>TARGETED SUBSIDY</b><h3>Protect people now.</h3><p>Essential for households the private market cannot serve. Recent Chicago city-supported projects cost roughly $679,000–$747,000 per unit, limiting local scale.</p><strong>Deep impact · limited volume</strong></article><div className="policy-plus" aria-hidden="true"><span>+</span></div><article><b>MARKET-RATE SUPPLY</b><h3>Make room at scale.</h3><p>Creates choices now, makes room for successive moves and produces the older housing future Oak Park residents will rely on.</p><strong>Broad impact · scalable</strong></article></div>
       </section>
 
-      <section className="iho"><div><span>INCLUSIONARY HOUSING</span><h2>A requirement cannot create an affordable unit in a building that never gets built.</h2></div><div><p>Inclusionary rules produce reduced-rent units only when the underlying project remains financially feasible. Requirements that make construction infeasible eliminate both market-rate and reduced-rent units.</p><p>San Francisco’s 2026 feasibility analysis found nearly every tested housing type infeasible even at a 0% requirement. The city then moved to cut its on-site requirement from 15% to 5% while seeking broader affordable-housing funding.</p><div className="source-links"><a href="https://media.api.sf.gov/documents/Triennial_Economic_Feasibilty_Report_2026.final.pdf" target="_blank" rel="noreferrer">SF Controller report ↗</a><a href="https://www.sfchronicle.com/realestate/article/affordable-housing-requirements-22194354.php" target="_blank" rel="noreferrer">Chronicle reporting ↗</a></div></div></section>
+      <section className="iho"><div><span>INCLUSIONARY HOUSING</span><h2>A requirement cannot create an affordable unit in a building that never gets built.</h2></div><div><p>Inclusionary rules can produce reduced-rent units. If the requirement makes new construction infeasible, it can also shut off the supply and filtering it depends on.</p><p>San Francisco’s 2026 feasibility analysis found nearly every tested housing type infeasible even at a 0% requirement. The city then moved to cut its on-site requirement from 15% to 5% while seeking broader affordable-housing funding.</p><div className="source-links"><a href="https://media.api.sf.gov/documents/Triennial_Economic_Feasibilty_Report_2026.final.pdf" target="_blank" rel="noreferrer">SF Controller report ↗</a><a href="https://www.sfchronicle.com/realestate/article/affordable-housing-requirements-22194354.php" target="_blank" rel="noreferrer">Chronicle reporting ↗</a></div></div></section>
 
-      <section className="finale"><div className="engine" aria-hidden="true"><div className="wheel w1"/><div className="wheel w2"/><div className="belt"/><div className="spark">BUILD</div></div><div><span>THE LESSON</span><h2>Start building again.</h2><p>Oak Park needs new housing today so future residents inherit an older and more affordable housing stock.</p></div></section>
+      <section className="finale"><div className="engine" aria-hidden="true"><div className="wheel w1"/><div className="wheel w2"/><div className="belt"/><div className="spark">BUILD</div></div><div><span>THE LESSON</span><h2>Start the engine again.</h2><p>New market-rate construction creates choices today and affordable housing tomorrow. Oak Park stopped feeding that system for too long.</p></div></section>
 
       <footer><p><strong>Method:</strong> ACS 2024 five-year table B25034; Village of Oak Park Strategic Vision for Housing; IHDA AHPAA affordability lists. Year-built data describe current stock and do not count units lost to demolition.</p><div><a href="https://api.censusreporter.org/1.0/data/show/latest?geo_ids=16000US1754885&table_ids=B25034" target="_blank" rel="noreferrer">ACS data</a><a href="#top">Back to top ↑</a></div></footer>
     </main>
