@@ -16,9 +16,9 @@ test("server-renders the housing explainer", async () => {
   const html = await response.text();
   assert.match(html, /<title>How Oak Park Makes Housing Affordable<\/title>/i);
   assert.match(html, /Today’s “luxury” housing is tomorrow’s affordable housing/);
-  assert.match(html, /Much of Oak Park’s affordable housing began as ordinary market-rate housing/);
-  assert.match(html, /Building plunged in the 1980s and 90s/);
-  assert.match(html, /We are missing decades of older housing/);
+  assert.match(html, /Almost all of Oak Park’s affordable housing started out as ordinary market-rate housing/);
+  assert.match(html, /Building slowed for four straight decades/);
+  assert.match(html, /We’re missing decades of older housing/);
   assert.doesNotMatch(html, /We are missing two decades of older housing/);
   assert.match(html, /3,313/);
   assert.match(html, /we don’t have to wait for buildings to age into affordability/i);
